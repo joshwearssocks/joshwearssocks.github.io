@@ -20,3 +20,5 @@ ui:
   # https://gitlab.com/antora/docs.antora.org/-/tree/main/supplemental-ui
   # https://gitlab.com/antora/antora-ui-default/-/tree/master/src
   supplemental_files: ./supplemental-ui
+output:
+  dir: ./public/projects
