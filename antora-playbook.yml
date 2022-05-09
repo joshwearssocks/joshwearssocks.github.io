@@ -1,5 +1,5 @@
 site:
-  title: Joshua Smith's Homepage
+  title: Joshua Smith
   url: https://giliath.org
   start_page: 240sx::background.adoc
 content:
@@ -17,3 +17,6 @@ ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
+  # https://gitlab.com/antora/docs.antora.org/-/tree/main/supplemental-ui
+  # https://gitlab.com/antora/antora-ui-default/-/tree/master/src
+  supplemental_files: ./supplemental-ui
