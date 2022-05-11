@@ -54,7 +54,7 @@ All this work gave me an excuse to buy decent fabrication equipment.
 image::background/downpipe.png[]
 
 Two years after installing the new turbo, I realized it was time to go electric.
-The maintenance of a 32 year old heavily modified engine has always been a chore,
+The maintenance of a 32 year old heavily modified engine was a chore,
 and the poor emissions conflicted with my desire to reduce my impact on the environment.
 
 == The EV Conversion Plan
@@ -62,7 +62,7 @@ and the poor emissions conflicted with my desire to reduce my impact on the envi
 I bought a fully working 2016 Chevy Spark EV as the donor car for this project.
 
 The Spark was desireable because the motor is designed to operate at lower RPM. 
-The differential gear ratio is 3.8:1, which is very similar to the 4:1 ratio in the 240sx's
+The Spark's differential gear ratio is 3.8:1, which is very similar to the 4:1 ratio in the 240sx's
 limited slip differential. The battery is also relatively small and contains 6 modular cells.
 
 The Spark is a compliance car for GM. 
@@ -71,7 +71,7 @@ why I ended up buying one in fully working condition. There were not many other 
 
 I also wanted to be able to log data from the CAN busses while the car was operating
 normally. This will help later on as I debug and spoof components that I will not be
-transferring to the 240sx. Relatively complete DBC files are available from
+transferring to the 240sx. Relatively complete CAN DBC files are available from
 Comma AI's https://github.com/commaai/opendbc[OpenDBC repo].
 I used these DBCs to decode CAN messages recorded on a drive home from work.
 These decoded messages are now stored in InfluxDB for quick visualization in Grafana.

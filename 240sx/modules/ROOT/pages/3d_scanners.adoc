@@ -1,11 +1,11 @@
-= 3D Scans
-:navtitle: 3D Scans
+= 3D Scanners
+:navtitle: 3D Scanners
 
 This project is complex enough to warrant buying a 3D scanner to aide in component layout,
 but almost all 3D scanners with decent resolution and accuracy are prohibitively 
 expensive for a hobbyist.
 
-== Scanners
+== Hardware
 
 Two scanners were used for this project: a Revopoint POP and a custom scanner based on an
 RPLidar A1M8.
@@ -36,8 +36,8 @@ was open sourced which showed good potential for this idea.
 
 The end result was a hacky looking and not very rigid scanner.
 
-.RPLidar Based 3D Scanner
-image::3d_scans/rplidar_scanner.png[]
+.RPLidar based 3D scanner
+image::3d_scanners/rplidar_scanner.png[]
 
 An ESP8266 is used to control the lazy suzan, receive data from the RPLidar, and transmit
 the RPLidar data along with the azimuth angle to a host over wifi. 
@@ -48,7 +48,7 @@ contains a script to adjust for various angles and offsets as a post processing 
 as shown below.
 
 .file_pc_viewer.py example with rear wheels and the spare tire well in view
-image::3d_scans/file_pc_viewer.png[]
+image::3d_scanners/file_pc_viewer.png[]
 
 == Software
 
@@ -64,3 +64,53 @@ the Revopoint POP.
 
 === Meshing Process
 
+There are multiple ways to convert point clouds to meshes, but the following method produces
+repeatably high quality results.
+
+. Open the mesh in Meshlab, then use the menu:Select Vertices[] and 
+menu:Delete Selected Vertices[] tools to clean up the mesh.
++
+.Manual mesh cleanup
+image::3d_scanners/meshlab_cleanup.png[]
++
+. Simplify the mesh with menu:Filters[Sampling > Poisson-disk Sampling].
++
+.Vertex sampling
+image::3d_scanners/meshlab_sampling.png[]
++
+.. `Base Mesh Subsampling` must be selected for vertex-only data.
+.. `Number of samples` is a balance between resulting mesh quality and size.
+For more detailed meshes, 600,000 is a reasonable starting point.
+. With the simplified point cloud selected, generate an initial mesh with 
+menu:Filters[Remeshing, Simplification and Reconstruction > Surface Reconstruction: Screened Poisson].
++
+.Surface reconstruction
+image::3d_scanners/meshlab_reconstruction.png[]
++
+.. Higher reconstruction depth will improve the amount of detail in the mesh at the cost of compute
+time. Too high of a reconstruction depth will make the mesh less smooth, especially if the
+point cloud is not very dense.
+. The Screened Poisson reconstruction technique leaves excess mesh that must be trimmed away.
+To trim the unwanted vertices in the mesh, first use 
+menu:Filters[Sampling > Distance from Reference Mesh] to calculate the distances from the Poisson mesh
+vertices to the original point cloud vertices.
++
+.Mesh distance from original point cloud calculation
+image::3d_scanners/meshlab_distances.png[]
++
+.. Uncheck `Compute Signed Distance`.
+.. The distance information is stored as vertex quality data in the Poisson mesh.
+. Select vertices that are not in close proximity to the reference mesh by using 
+menu:Filters[Selection > Select by Vertex Quality], where `Quality` is distance in mm.
++
+.Mesh vertex selection by quality
+image::3d_scanners/meshlab_quality_selection.png[]
++
+.. Select a `Min Quality` value that balances accuracy and appearance for your application.
+The minimum distance will vary based on point density of the original point cloud.
+. Use the menu:Delete Selected Vertices[] tool to remove the unwanted vertices.
+
+The final product is a reasonably smooth and lightweight mesh with high accuracy. 
+
+.Meshed point cloud
+image::3d_scanners/meshlab_final.png[]

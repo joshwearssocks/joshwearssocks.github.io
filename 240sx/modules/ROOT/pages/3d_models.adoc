@@ -1,0 +1,40 @@
+= 3D Models
+:navtitle: 3D Models
+
+Models of the 240sx chassis and Spark EV components were created with 3D scanners.
+
+== 240sx Chassis
+
+The engine bay was scanned with the Revopoint POP scanner over multiple attempts.
+The entire engine bay was covered in masking tape, and alignment stickers were placed
+on the tape throughout the bay. The POP scans were prone to drift in positional accuracy
+over distances larger than a foot or so, so the entire bay was scanned a corner at a time,
+then merged together in post.
+
+.240sx engine bay scan
+image::3d_models/engine_bay_scan.png[]
+
+The underbody was scanned with RPLidar based area scanner. The mesh shown below is a
+combination of 24 discrete scans.
+
+.240sx underbody scan
+image::3d_models/underbody_scan.png[]
+
+An S13 240sx model was extracted from an 
+https://assetto-db.com/car/240sx_ka[Assetto Corsa addon] as a reference.
+The model aligns reasonably well with the chassis scans.
+
+.Chassis model with scans
+image::3d_models/chassis_with_underbody.png[]
+
+The model creates some reasonable looking renders as well.
+
+.240sx model render
+image::3d_models/space_render.png[]
+
+== EV Components
+
+The motor, transaxle, battery cell, and power electronics were all 3D scanned with the Revopoint POP.
+
+.EV component scans
+image::3d_models/spark_ev_scans.png[]
