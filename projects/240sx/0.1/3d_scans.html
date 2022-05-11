@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Joshua Smith</title>
+    <title>3D Scans :: Joshua Smith</title>
     <link rel="canonical" href="https://www.giliath.org/240sx/0.1/3d_scans.html">
     <link rel="prev" href="background.html">
     <link rel="next" href="component_layout.html">
@@ -42,7 +42,7 @@
     <a class="nav-link" href="background.html">Background</a>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="3d_scans.html">3d_scans.adoc</a>
+    <a class="nav-link" href="3d_scans.html">3D Scans</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="component_layout.html">component_layout.adoc</a>
@@ -78,7 +78,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="background.html">240SX EV Conversion</a></li>
-    <li><a href="3d_scans.html">3d_scans.adoc</a></li>
+    <li><a href="3d_scans.html">3D Scans</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/joshwearssocks/joshwearssocks.github.io/edit/main/240sx/modules/ROOT/pages/3d_scans.adoc">Edit this Page</a></div>
@@ -88,8 +88,115 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
+<h1 class="page">3D Scans</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>I like 3d scanning</p>
+<p>This project is complex enough to warrant buying a 3D scanner to aide in component layout,
+but almost all 3D scanners with decent resolution and accuracy are prohibitively
+expensive for a hobbyist.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="scanners"><a class="anchor" href="#scanners"></a>Scanners</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Two scanners were used for this project: a Revopoint POP and a custom scanner based on an
+RPLidar A1M8.</p>
+</div>
+<div class="sect2">
+<h3 id="revopoint-pop"><a class="anchor" href="#revopoint-pop"></a>Revopoint POP</h3>
+<div class="paragraph">
+<p>Revopoint had recently released the POP 3D scanner, which was reasonably priced at around $650.
+Creality also had a competing product, but the POP was more refined. The POP has 0.1mm accuracy.
+I purchased the POP a few months before the POP2 was announced, which has 0.05mm accuracy and
+a gyroscope to improve scan accuracy over larger targets.</p>
+</div>
+<div class="paragraph">
+<p>The Revopoint POP is great for creating high resolution scans of small to medium sized objects,
+but it lacks the precision needed to scan an entire vehicle chassis. Revopoint software
+will automatically distort the scanned model to better align roughly overlapping sections.
+This distortion is usually minimal and welcome on smaller models, but it becomes inaccurate on
+larger models such as a vehicle chassis.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rplidar-based-scanner"><a class="anchor" href="#rplidar-based-scanner"></a>RPLidar Based Scanner</h3>
+<div class="paragraph">
+<p>A second scanner was needed for modelling the underbody of the car. 2D scanning lidar sensors
+with reasonable accuracy are inexpensive.
+The <a href="https://www.slamtec.com/en/Lidar/A1Spec">RPLidar A1M8</a> is $99 with an angular resolution of
+1 degree and a range resolution of 1% of distance.
+I planned to create a 3D scanner from this by mounting the lidar sensor to the powered
+lazy suzan that came with the Revopoint POP.
+A <a href="https://beagleboard.org/p/chronma/rplidar-based-3d-area-scanner-3ae946">similar project</a>
+was open sourced which showed good potential for this idea.</p>
+</div>
+<div class="paragraph">
+<p>The end result was a hacky looking and not very rigid scanner.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_scans/rplidar_scanner.png" alt="rplidar scanner">
+</div>
+<div class="title">Figure 1. RPLidar Based 3D Scanner</div>
+</div>
+<div class="paragraph">
+<p>An ESP8266 is used to control the lazy suzan, receive data from the RPLidar, and transmit
+the RPLidar data along with the azimuth angle to a host over wifi.</p>
+</div>
+<div class="paragraph">
+<p>The poor rigidity of the structure is roughly made up for in software.
+The <a href="https://github.com/joshwearssocks/rplidar_area_scanner">rplidar_area_scanner</a> repo
+contains a script to adjust for various angles and offsets as a post processing step,
+as shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_scans/file_pc_viewer.png" alt="file pc viewer">
+</div>
+<div class="title">Figure 2. file_pc_viewer.py example with rear wheels and the spare tire well in view</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="software"><a class="anchor" href="#software"></a>Software</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>3 different pieces of software are used to post process 3D scans:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.meshlab.net/">MeshLab</a> is used for point cloud cleanup,
+simplification, and meshing.</p>
+</li>
+<li>
+<p><a href="https://www.cloudcompare.org/">CloudCompare</a> is used to merge point clouds together.</p>
+</li>
+<li>
+<p>Revopoint software (HandyScan/HandyStudio) is used to mesh point clouds collected from
+the Revopoint POP.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Revopoint software typically creates smoother meshes at the expense of losing details that don&#8217;t have many points.</p>
+</li>
+<li>
+<p>This software also supports mesh merging, but the merging process may distort the meshes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="meshing-process"><a class="anchor" href="#meshing-process"></a>Meshing Process</h3>
+
+</div>
+</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="background.html">Background</a></span>

@@ -41,7 +41,7 @@
     <a class="nav-link" href="background.html">Background</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="3d_scans.html">3d_scans.adoc</a>
+    <a class="nav-link" href="3d_scans.html">3D Scans</a>
   </li>
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="component_layout.html">component_layout.adoc</a>
@@ -88,11 +88,147 @@
 </aside>
 <article class="doc">
 <h1 class="page">Project Background</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>This is a car.</p>
+<p>This project is an attempt to turn a 1989 Nissan 240sx into an electric vehicle that
+meets the following goals:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Maintains the original handling characteristics by not significantly changing weight
+or weight distribution.</p>
+</li>
+<li>
+<p>Has enough power to feel fast, but still be drivable at full throttle without electronic
+assists.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><em>"It&#8217;s more fun to drive a slow car fast&#8230;&#8203;"</em></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Can slide around easily.</p>
+</li>
+<li>
+<p>Gets me to work and back: at least 50 miles of range, ideally at least 70.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-car"><a class="anchor" href="#the-car"></a>The Car</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I bought this 240sx in 2016. It was mostly stock except for suspension components,
+and it had a 5 lug swap with 300zx brakes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/background/240sx.png" alt="240sx">
+</div>
+</div>
+<div class="paragraph">
+<p>I quickly fell in love with the interior. Like most 90s Japanese sports cars, the dash flows
+smoothly into the doors and center console. The low dash and many windows yield great
+visibility. The seats and design elements are reminiscent of a spacecraft.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/background/240sx_interior.png" alt="240sx interior">
+</div>
+</div>
+<div class="paragraph">
+<p>The stock KA24E motor is a bit slow, making ~130HP from the factory.
+A cheap turbo kit was recently released for this motor, so I decided to learn how to turbo
+the car with it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-turbo-experience"><a class="anchor" href="#the-turbo-experience"></a>The Turbo Experience</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/background/cheap_turbo_kit.png" alt="cheap turbo kit">
+</div>
+</div>
+<div class="paragraph">
+<p>The car began to idle poorly on startup, which led me to purchase a Megasquirt PNP2 ECU to help
+with diagnostics. This was great because it gave me the opportunity to learn how to tune an
+engine. This was terrible because it is challenging to properly tune across all ambient
+temperature conditions for cold starts, hot starts, and normal operation.</p>
+</div>
+<div class="paragraph">
+<p>If I was to tune an engine from scratch again, I would rent a dyno for a few hours and buy an
+ECU that supports long/short term fuel trims.</p>
+</div>
+<div class="paragraph">
+<p>I ultimately spent ~$12k replacing all the mechanical components from the original turbo kit,
+fixing melted components, preventing future plastic liquefaction events, adding supporting
+mods, and ultimately replacing the turbo itself.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/background/new_turbo.png" alt="new turbo">
+</div>
+<div class="title">Figure 1. Garrett GT3071R Upgrade</div>
+</div>
+<div class="paragraph">
+<p>All this work gave me an excuse to buy decent fabrication equipment.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/background/downpipe.png" alt="downpipe">
+</div>
+<div class="title">Figure 2. Custom Midpipe</div>
+</div>
+<div class="paragraph">
+<p>Two years after installing the new turbo, I realized it was time to go electric.
+The maintenance of a 32 year old heavily modified engine has always been a chore,
+and the poor emissions conflicted with my desire to reduce my impact on the environment.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-ev-conversion-plan"><a class="anchor" href="#the-ev-conversion-plan"></a>The EV Conversion Plan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I bought a fully working 2016 Chevy Spark EV as the donor car for this project.</p>
+</div>
+<div class="paragraph">
+<p>The Spark was desireable because the motor is designed to operate at lower RPM.
+The differential gear ratio is 3.8:1, which is very similar to the 4:1 ratio in the 240sx&#8217;s
+limited slip differential. The battery is also relatively small and contains 6 modular cells.</p>
+</div>
+<div class="paragraph">
+<p>The Spark is a compliance car for GM.
+It was only sold in a few states, and only from 2014 to 2016. This is
+why I ended up buying one in fully working condition. There were not many other options.</p>
+</div>
+<div class="paragraph">
+<p>I also wanted to be able to log data from the CAN busses while the car was operating
+normally. This will help later on as I debug and spoof components that I will not be
+transferring to the 240sx. Relatively complete DBC files are available from
+Comma AI&#8217;s <a href="https://github.com/commaai/opendbc">OpenDBC repo</a>.
+I used these DBCs to decode CAN messages recorded on a drive home from work.
+These decoded messages are now stored in InfluxDB for quick visualization in Grafana.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/background/spark_grafana.png" alt="spark grafana">
+</div>
+<div class="title">Figure 3. Decoded Spark EV CAN Messages</div>
+</div>
+</div>
 </div>
 <nav class="pagination">
-  <span class="next"><a href="3d_scans.html">3d_scans.adoc</a></span>
+  <span class="next"><a href="3d_scans.html">3D Scans</a></span>
 </nav>
 </article>
   </div>
