@@ -1,4 +1,80 @@
 = Project Background
 :navtitle: Background
 
-This is a car.
+This project is an attempt to turn a 1989 Nissan 240sx into an electric vehicle that
+meets the following goals:
+
+. Maintains the original handling characteristics by not significantly changing weight
+or weight distribution.
+. Has enough power to feel fast, but still be drivable at full throttle without electronic
+assists.
+.. _"It's more fun to drive a slow car fast..."_
+. Can slide around easily.
+. Gets me to work and back: at least 50 miles of range, ideally at least 70.
+
+== The Car
+
+I bought this 240sx in 2016. It was mostly stock except for suspension components,
+and it had a 5 lug swap with 300zx brakes.
+
+image::background/240sx.png[]
+
+I quickly fell in love with the interior. Like most 90s Japanese sports cars, the dash flows
+smoothly into the doors and center console. The low dash and many windows yield great
+visibility. The seats and design elements are reminiscent of a spacecraft.
+
+image::background/240sx_interior.png[]
+
+The stock KA24E motor is a bit slow, making ~130HP from the factory. 
+A cheap turbo kit was recently released for this motor, so I decided to learn how to turbo
+the car with it.
+
+== The Turbo Experience
+
+image::background/cheap_turbo_kit.png[]
+
+The car began to idle poorly on startup, which led me to purchase a Megasquirt PNP2 ECU to help
+with diagnostics. This was great because it gave me the opportunity to learn how to tune an
+engine. This was terrible because it is challenging to properly tune across all ambient
+temperature conditions for cold starts, hot starts, and normal operation.
+
+If I was to tune an engine from scratch again, I would rent a dyno for a few hours and buy an
+ECU that supports long/short term fuel trims. 
+
+I ultimately spent ~$12k replacing all the mechanical components from the original turbo kit,
+fixing melted components, preventing future plastic liquefaction events, adding supporting
+mods, and ultimately replacing the turbo itself.
+
+.Garrett GT3071R Upgrade
+image::background/new_turbo.png[]
+
+All this work gave me an excuse to buy decent fabrication equipment.
+
+.Custom Midpipe
+image::background/downpipe.png[]
+
+Two years after installing the new turbo, I realized it was time to go electric.
+The maintenance of a 32 year old heavily modified engine has always been a chore,
+and the poor emissions conflicted with my desire to reduce my impact on the environment.
+
+== The EV Conversion Plan
+
+I bought a fully working 2016 Chevy Spark EV as the donor car for this project.
+
+The Spark was desireable because the motor is designed to operate at lower RPM. 
+The differential gear ratio is 3.8:1, which is very similar to the 4:1 ratio in the 240sx's
+limited slip differential. The battery is also relatively small and contains 6 modular cells.
+
+The Spark is a compliance car for GM. 
+It was only sold in a few states, and only from 2014 to 2016. This is
+why I ended up buying one in fully working condition. There were not many other options.
+
+I also wanted to be able to log data from the CAN busses while the car was operating
+normally. This will help later on as I debug and spoof components that I will not be
+transferring to the 240sx. Relatively complete DBC files are available from
+Comma AI's https://github.com/commaai/opendbc[OpenDBC repo].
+I used these DBCs to decode CAN messages recorded on a drive home from work.
+These decoded messages are now stored in InfluxDB for quick visualization in Grafana.
+
+.Decoded Spark EV CAN Messages
+image::background/spark_grafana.png[]

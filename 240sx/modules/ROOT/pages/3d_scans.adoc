@@ -1,1 +1,66 @@
-I like 3d scanning
+= 3D Scans
+:navtitle: 3D Scans
+
+This project is complex enough to warrant buying a 3D scanner to aide in component layout,
+but almost all 3D scanners with decent resolution and accuracy are prohibitively 
+expensive for a hobbyist.
+
+== Scanners
+
+Two scanners were used for this project: a Revopoint POP and a custom scanner based on an
+RPLidar A1M8.
+
+=== Revopoint POP
+
+Revopoint had recently released the POP 3D scanner, which was reasonably priced at around $650.
+Creality also had a competing product, but the POP was more refined. The POP has 0.1mm accuracy.
+I purchased the POP a few months before the POP2 was announced, which has 0.05mm accuracy and
+a gyroscope to improve scan accuracy over larger targets.
+
+The Revopoint POP is great for creating high resolution scans of small to medium sized objects,
+but it lacks the precision needed to scan an entire vehicle chassis. Revopoint software
+will automatically distort the scanned model to better align roughly overlapping sections.
+This distortion is usually minimal and welcome on smaller models, but it becomes inaccurate on
+larger models such as a vehicle chassis.
+
+=== RPLidar Based Scanner
+
+A second scanner was needed for modelling the underbody of the car. 2D scanning lidar sensors
+with reasonable accuracy are inexpensive. 
+The https://www.slamtec.com/en/Lidar/A1Spec[RPLidar A1M8] is $99 with an angular resolution of
+1 degree and a range resolution of 1% of distance.
+I planned to create a 3D scanner from this by mounting the lidar sensor to the powered 
+lazy suzan that came with the Revopoint POP.
+A https://beagleboard.org/p/chronma/rplidar-based-3d-area-scanner-3ae946[similar project]
+was open sourced which showed good potential for this idea.
+
+The end result was a hacky looking and not very rigid scanner.
+
+.RPLidar Based 3D Scanner
+image::3d_scans/rplidar_scanner.png[]
+
+An ESP8266 is used to control the lazy suzan, receive data from the RPLidar, and transmit
+the RPLidar data along with the azimuth angle to a host over wifi. 
+
+The poor rigidity of the structure is roughly made up for in software.
+The https://github.com/joshwearssocks/rplidar_area_scanner[rplidar_area_scanner] repo
+contains a script to adjust for various angles and offsets as a post processing step,
+as shown below.
+
+.file_pc_viewer.py example with rear wheels and the spare tire well in view
+image::3d_scans/file_pc_viewer.png[]
+
+== Software
+
+3 different pieces of software are used to post process 3D scans:
+
+* https://www.meshlab.net/[MeshLab] is used for point cloud cleanup, 
+simplification, and meshing.
+* https://www.cloudcompare.org/[CloudCompare] is used to merge point clouds together.
+* Revopoint software (HandyScan/HandyStudio) is used to mesh point clouds collected from
+the Revopoint POP.
+** Revopoint software typically creates smoother meshes at the expense of losing details that don't have many points.
+** This software also supports mesh merging, but the merging process may distort the meshes.
+
+=== Meshing Process
+
