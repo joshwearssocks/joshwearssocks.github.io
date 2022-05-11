@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>3D Models :: Joshua Smith</title>
+    <link rel="canonical" href="https://www.giliath.org/240sx/0.1/3d_models.html">
+    <link rel="prev" href="3d_scanners.html">
+    <link rel="next" href="component_layout.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="navbar-item" href="https://www.giliath.org">Joshua Smith</a>
+        <span class="separator">//</span>
+        <a href="https://www.giliath.org/projects">Projects</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="240sx" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="background.html">240SX EV Conversion</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="background.html">Background</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="3d_scanners.html">3D Scanners</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="3d_models.html">3D Models</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="component_layout.html">Component Layout</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">240SX EV Conversion</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="background.html">240SX EV Conversion</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="background.html">0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="background.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="background.html">240SX EV Conversion</a></li>
+    <li><a href="3d_models.html">3D Models</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/joshwearssocks/joshwearssocks.github.io/edit/main/240sx/modules/ROOT/pages/3d_models.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">3D Models</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Models of the 240sx chassis and Spark EV components were created with 3D scanners.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="240sx-chassis"><a class="anchor" href="#240sx-chassis"></a>240sx Chassis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The engine bay was scanned with the Revopoint POP scanner over multiple attempts.
+The entire engine bay was covered in masking tape, and alignment stickers were placed
+on the tape throughout the bay. The POP scans were prone to drift in positional accuracy
+over distances larger than a foot or so, so the entire bay was scanned a corner at a time,
+then merged together in post.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_models/engine_bay_scan.png" alt="engine bay scan">
+</div>
+<div class="title">Figure 1. 240sx engine bay scan</div>
+</div>
+<div class="paragraph">
+<p>The underbody was scanned with RPLidar based area scanner. The mesh shown below is a
+combination of 24 discrete scans.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_models/underbody_scan.png" alt="underbody scan">
+</div>
+<div class="title">Figure 2. 240sx underbody scan</div>
+</div>
+<div class="paragraph">
+<p>An S13 240sx model was extracted from an
+<a href="https://assetto-db.com/car/240sx_ka">Assetto Corsa addon</a> as a reference.
+The model aligns reasonably well with the chassis scans.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_models/chassis_with_underbody.png" alt="chassis with underbody">
+</div>
+<div class="title">Figure 3. Chassis model with scans</div>
+</div>
+<div class="paragraph">
+<p>The model creates some reasonable looking renders as well.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_models/space_render.png" alt="space render">
+</div>
+<div class="title">Figure 4. 240sx model render</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ev-components"><a class="anchor" href="#ev-components"></a>EV Components</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The motor, transaxle, battery cell, and power electronics were all 3D scanned with the Revopoint POP.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_models/spark_ev_scans.png" alt="spark ev scans">
+</div>
+<div class="title">Figure 5. EV component scans</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="3d_scanners.html">3D Scanners</a></span>
+  <span class="next"><a href="component_layout.html">Component Layout</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

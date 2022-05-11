@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>3D Scans :: Joshua Smith</title>
-    <link rel="canonical" href="https://www.giliath.org/240sx/0.1/3d_scans.html">
+    <title>3D Scanners :: Joshua Smith</title>
+    <link rel="canonical" href="https://www.giliath.org/240sx/0.1/3d_scanners.html">
     <link rel="prev" href="background.html">
-    <link rel="next" href="component_layout.html">
+    <link rel="next" href="3d_models.html">
     <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../favicon.ico" type="image/x-icon">    <script>var uiRootPath = '../../_'</script>
@@ -42,10 +42,13 @@
     <a class="nav-link" href="background.html">Background</a>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="3d_scans.html">3D Scans</a>
+    <a class="nav-link" href="3d_scanners.html">3D Scanners</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="component_layout.html">component_layout.adoc</a>
+    <a class="nav-link" href="3d_models.html">3D Models</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="component_layout.html">Component Layout</a>
   </li>
 </ul>
   </li>
@@ -78,17 +81,17 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="background.html">240SX EV Conversion</a></li>
-    <li><a href="3d_scans.html">3D Scans</a></li>
+    <li><a href="3d_scanners.html">3D Scanners</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/joshwearssocks/joshwearssocks.github.io/edit/main/240sx/modules/ROOT/pages/3d_scans.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/joshwearssocks/joshwearssocks.github.io/edit/main/240sx/modules/ROOT/pages/3d_scanners.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">3D Scans</h1>
+<h1 class="page">3D Scanners</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -99,7 +102,7 @@ expensive for a hobbyist.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="scanners"><a class="anchor" href="#scanners"></a>Scanners</h2>
+<h2 id="hardware"><a class="anchor" href="#hardware"></a>Hardware</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Two scanners were used for this project: a Revopoint POP and a custom scanner based on an
@@ -138,9 +141,9 @@ was open sourced which showed good potential for this idea.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/3d_scans/rplidar_scanner.png" alt="rplidar scanner">
+<img src="_images/3d_scanners/rplidar_scanner.png" alt="rplidar scanner">
 </div>
-<div class="title">Figure 1. RPLidar Based 3D Scanner</div>
+<div class="title">Figure 1. RPLidar based 3D scanner</div>
 </div>
 <div class="paragraph">
 <p>An ESP8266 is used to control the lazy suzan, receive data from the RPLidar, and transmit
@@ -154,7 +157,7 @@ as shown below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/3d_scans/file_pc_viewer.png" alt="file pc viewer">
+<img src="_images/3d_scanners/file_pc_viewer.png" alt="file pc viewer">
 </div>
 <div class="title">Figure 2. file_pc_viewer.py example with rear wheels and the spare tire well in view</div>
 </div>
@@ -194,13 +197,121 @@ the Revopoint POP.</p>
 </div>
 <div class="sect2">
 <h3 id="meshing-process"><a class="anchor" href="#meshing-process"></a>Meshing Process</h3>
-
+<div class="paragraph">
+<p>There are multiple ways to convert point clouds to meshes, but the following method produces
+repeatably high quality results.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the mesh in Meshlab, then use the <b class="menuref">Select Vertices</b> and
+<b class="menuref">Delete Selected Vertices</b> tools to clean up the mesh.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_scanners/meshlab_cleanup.png" alt="meshlab cleanup">
+</div>
+<div class="title">Figure 3. Manual mesh cleanup</div>
+</div>
+</li>
+<li>
+<p>Simplify the mesh with <span class="menuseq"><b class="menu">Filters</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Sampling</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Poisson-disk Sampling</b></span>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_scanners/meshlab_sampling.png" alt="meshlab sampling">
+</div>
+<div class="title">Figure 4. Vertex sampling</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>Base Mesh Subsampling</code> must be selected for vertex-only data.</p>
+</li>
+<li>
+<p><code>Number of samples</code> is a balance between resulting mesh quality and size.
+For more detailed meshes, 600,000 is a reasonable starting point.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>With the simplified point cloud selected, generate an initial mesh with
+<span class="menuseq"><b class="menu">Filters</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Remeshing, Simplification and Reconstruction</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Surface Reconstruction: Screened Poisson</b></span>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_scanners/meshlab_reconstruction.png" alt="meshlab reconstruction">
+</div>
+<div class="title">Figure 5. Surface reconstruction</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Higher reconstruction depth will improve the amount of detail in the mesh at the cost of compute
+time. Too high of a reconstruction depth will make the mesh less smooth, especially if the
+point cloud is not very dense.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>The Screened Poisson reconstruction technique leaves excess mesh that must be trimmed away.
+To trim the unwanted vertices in the mesh, first use
+<span class="menuseq"><b class="menu">Filters</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Sampling</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Distance from Reference Mesh</b></span> to calculate the distances from the Poisson mesh
+vertices to the original point cloud vertices.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_scanners/meshlab_distances.png" alt="meshlab distances">
+</div>
+<div class="title">Figure 6. Mesh distance from original point cloud calculation</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Uncheck <code>Compute Signed Distance</code>.</p>
+</li>
+<li>
+<p>The distance information is stored as vertex quality data in the Poisson mesh.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Select vertices that are not in close proximity to the reference mesh by using
+<span class="menuseq"><b class="menu">Filters</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Selection</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Select by Vertex Quality</b></span>, where <code>Quality</code> is distance in mm.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_scanners/meshlab_quality_selection.png" alt="meshlab quality selection">
+</div>
+<div class="title">Figure 7. Mesh vertex selection by quality</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select a <code>Min Quality</code> value that balances accuracy and appearance for your application.
+The minimum distance will vary based on point density of the original point cloud.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Use the <b class="menuref">Delete Selected Vertices</b> tool to remove the unwanted vertices.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The final product is a reasonably smooth and lightweight mesh with high accuracy.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/3d_scanners/meshlab_final.png" alt="meshlab final">
+</div>
+<div class="title">Figure 8. Meshed point cloud</div>
+</div>
 </div>
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="background.html">Background</a></span>
-  <span class="next"><a href="component_layout.html">component_layout.adoc</a></span>
+  <span class="next"><a href="3d_models.html">3D Models</a></span>
 </nav>
 </article>
   </div>
