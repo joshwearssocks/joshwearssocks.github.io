@@ -65,7 +65,9 @@ the Revopoint POP.
 === Meshing Process
 
 There are multiple ways to convert point clouds to meshes, but the following method produces
-repeatably high quality results.
+good quality meshes while maintaining as much of the original scan as possible.
+The meshing process in Revopoint software tends to ignore portions of the point cloud that are
+more isolated from the rest of the point cloud.
 
 . Open the mesh in Meshlab, then use the menu:Select Vertices[] and 
 menu:Delete Selected Vertices[] tools to clean up the mesh.

@@ -1,0 +1,10 @@
+
+
+
+. Battery coolant
+. Electronics coolant
+. Motor oil (used for both cooling and bearing lubrication)
+. AC condenser
+
+In the Spark, all four radiators used the same core, but unfortunately the
+radiator stack is about 2" to wide and 1" too tall for the 240sx radiator location.

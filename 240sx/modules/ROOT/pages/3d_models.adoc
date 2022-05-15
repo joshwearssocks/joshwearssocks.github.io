@@ -21,7 +21,8 @@ combination of 24 discrete scans.
 image::3d_models/underbody_scan.png[]
 
 An S13 240sx model was extracted from an 
-https://assetto-db.com/car/240sx_ka[Assetto Corsa addon] as a reference.
+https://assetto-db.com/car/240sx_ka[Assetto Corsa addon] as a CAD reference, and for future
+aerodynamic simulations with https://www.openfoam.com/[OpenFOAM].
 The model aligns reasonably well with the chassis scans.
 
 .Chassis model with scans
