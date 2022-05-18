@@ -1,0 +1,93 @@
+= Battery Boxes
+:navtitle: Battery Boxes
+
+The OEM battery back is too bulky and oddly shaped to fit into the car as-is.
+The entire pack needs to be disassembled and split into two sections
+to fit in the 240sx chassis.
+
+.OE battery box
+image::battery_boxes/oe_box.png[]
+
+All the rear suspension needed to be disassembled to remove the battery pack
+from the Spark. This vehicle was not designed with quick battery swapping in mind...
+
+.Spark rear underbody
+image::battery_boxes/spark_rear_underbody.png[]
+
+After removing the top lid, the contactor assembly (left), BMS (mounted to cell 3),
+battery disconnect (above cell 2), water cooling assembly, and the 6 cells are revealed.
+
+.OE battery box interior
+image::battery_boxes/oe_box_interior.png[]
+
+== Material Choices
+
+The OE box is made out of a plastic/fiberglass composite with steel supporting structures.
+A thick adhesive is used to waterproof all the steel/composite junctions. 
+
+For the custom battery box assemblies, I decided to use 20 gauge sheet steel with 1/2"
+16 gauge steel square tube for structure. Aluminum tread plate was another option, but the original
+battery box already had connector faceplates laser cut out of steel, and I wanted to reuse those.
+
+To electrically insulate the interior, fiberglass can be secured on the inner sides of the box.
+
+== Front Battery Box Assembly
+
+The front battery box was modelled in blender around the 3D scanned battery cells.
+A cheap sheet metal brake was used to fabricate the basic assembly per the model's dimensions.
+
+.Front battery box being bent on cheap sheet metal brake
+image::battery_boxes/front/cheap_bender.png[]
+
+.Front battery box mockup
+image::battery_boxes/front/front_battery_attempt_1.png[]
+
+It turns out the 3D model did not include some brackets that shielded the coolant ports on the
+battery cells... This was resolved with some more brake action.
+
+.Additional bends added to front battery box
+image::battery_boxes/front/front_battery_attempt_2.png[]
+
+.Front box mockup with cells
+image::battery_boxes/front/front_battery_attempt_2_with_bat.png[]
+
+The box was placed in the engine bay to check fitment. The additional bends require the box to be
+slightly higher than original expected.
+
+.Front box in bay
+image::battery_boxes/front/front_bat_in_bay.png[]
+
+The CAD model was updated with the new battery box design and the fitment was confirmed to match
+the physical measurements.
+
+.Front box model in bay
+image::battery_boxes/front/blender_front_bat.png[]
+
+=== Front Battery Box Structural Members
+
+Square tubes and bars were used to add structural support to the front battery box.
+These structural components were welded directly to the sheet metal assembly.
+
+.Front box structural support
+image::battery_boxes/front/front_bat_bottom_welds.png[]
+
+Unfortunately, this led to quite a lot of warping which will need to be fixed with some hammers
+and dollies. The battery cells sit flat on the bottom of the boxes in two sections that each
+span the length of the cell. I should not need to shrink the sheet metal as long as these sections
+are flat enough.
+
+.Sheet metal warpage on front battery box
+image::battery_boxes/front/front_bat_warpage.png[]
+
+Additional steel bar was used to create a partial mounting structure. This should help minimize flex
+in the structure as well. Each butt weld started with heavy chamfers to ensure at least 50% 
+penetration, and stainless steel filler was added on top of the weld surface to improve strength.
+Just in case...
+
+.Front box partial mounting structure
+image::battery_boxes/front/front_bat_mount_supports.png[]
+
+And here it is in the engine bay:
+
+.Front box in engine bay at final height
+image::battery_boxes/front/front_bat_in_bay_again.png[]

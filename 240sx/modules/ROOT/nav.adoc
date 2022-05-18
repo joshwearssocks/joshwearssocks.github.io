@@ -2,3 +2,4 @@
 * xref:3d_scanners.adoc[]
 * xref:3d_models.adoc[]
 * xref:component_layout.adoc[]
+* xref:battery_boxes.adoc[]
