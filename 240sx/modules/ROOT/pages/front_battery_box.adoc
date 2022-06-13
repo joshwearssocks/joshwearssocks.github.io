@@ -1,0 +1,84 @@
+= Front Battery Box
+:navtitle: Front Battery Box
+
+The front battery box was modelled in blender around the 3D scanned battery cells.
+A cheap sheet metal brake was used to fabricate the basic assembly per the model's dimensions.
+
+.Front battery box being bent on cheap sheet metal brake
+image::battery_boxes/front/cheap_bender.png[]
+
+.Front battery box mockup
+image::battery_boxes/front/front_battery_attempt_1.png[]
+
+It turns out the 3D model did not include some brackets that shielded the coolant ports on the
+battery cells... This was resolved with some more brake action.
+
+.Additional bends added to front battery box
+image::battery_boxes/front/front_battery_attempt_2.png[]
+
+.Front box mockup with cells
+image::battery_boxes/front/front_battery_attempt_2_with_bat.png[]
+
+The box was placed in the engine bay to check fitment. The additional bends require the box to be
+slightly higher than original expected.
+
+.Front box in bay
+image::battery_boxes/front/front_bat_in_bay.png[]
+
+The CAD model was updated with the new battery box design and the fitment was confirmed to match
+the physical measurements.
+
+.Front box model in bay
+image::battery_boxes/front/blender_front_bat.png[]
+
+== Front Battery Box Structural Members
+
+Square tubes and bars were used to add structural support to the front battery box.
+These structural components were welded directly to the sheet metal assembly.
+
+.Front box structural support
+image::battery_boxes/front/front_bat_bottom_welds.png[]
+
+Unfortunately, this led to quite a lot of warping which needs to be corrected. 
+The battery cells sit flat on the bottom of the box.
+
+.Sheet metal warpage on front battery box
+image::battery_boxes/front/front_bat_warpage.png[]
+
+Steel bar was used to create a mounting structure. 
+Each butt weld started with heavy chamfers to ensure at least 50% 
+penetration, and stainless steel filler was added on top of the weld surface to improve strength.
+
+.Front box partial mounting structure
+image::battery_boxes/front/front_bat_mount_supports.png[]
+
+Here is the battery tray in the engine bay:
+
+.Front box in engine bay at final height
+image::battery_boxes/front/front_bat_in_bay_again.png[]
+
+== Warpage Correction
+
+After welding the structural components to the sheet steel, it was time to un-weld them.
+After some time with the angle grinder, then the drill, then the angle grinder, then the
+3 lb sledge hammer, the structure components finally lost grip.
+
+.Disassembled structure
+image::battery_boxes/front/front_box_unweld.png[]
+
+Both the structural piece and the sheet steel had significant twists.
+The structural component was corrected on the welding table with shims and clamps.
+The TIG welding torch was used to heat up the cross members while slowly tightening
+the clamps to eliminate all the twist.
+
+The base of the sheet metal box was shrunk using a propane torch and a hammer.
+The process was repeated a few times to achieve an acceptable level of flatness.
+
+.Flattening process using a metal shrinking technique
+image::battery_boxes/front/start_of_shrinking.png[]
+
+The sheet metal was fastened to the structural component with eight M8 bolts.
+
+.Reassembled front battery box
+image::battery_boxes/front/front_box_straightened.png[]
+

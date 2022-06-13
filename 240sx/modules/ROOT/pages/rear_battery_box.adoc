@@ -1,0 +1,156 @@
+= Rear Battery Box
+:navtitle: Rear Battery Box
+
+The rear battery box assembly holds twice as many batteries as the front
+box. An entire 2'x4' sheet of 20 gauge steel was used as the base.
+
+.Rear battery sheet steel measurements
+image::battery_boxes/rear/rear_bat_sketch.png[]
+
+The rear battery box was assembled after learning a lot of lessons
+from the front box assembly. 0.5" square tube was used to provide
+structural support while clamping the sheet steel in place during the 
+welding process.
+
+.Square tube support members
+image::battery_boxes/rear/rear_bat_structure.png[]
+
+The square tube was bolted into place with M8 screws to support
+the sheet metal during the welding process.
+
+.Bent sheet metal base with square tube supports
+image::battery_boxes/rear/rear_bat_partial_1.png[]
+
+.Sides welded onto rear battery box
+image::battery_boxes/rear/rear_bat_partial_2.png[]
+
+The spare tire well made a sudden departure and the battery
+box filled the void where it once lived.
+
+.Spare tire well removal
+image::battery_boxes/rear/bye_spare_tire_well.png[]
+
+.Rear battery box in position
+image::battery_boxes/rear/rear_bat_in_position.png[]
+
+When pushed up as far as it can go, the rear battery
+box does not protrude too far from underneath the car.
+
+.Rear battery protrusion
+image::battery_boxes/rear/rear_bat_protrusion.png[]
+
+== Trunk Reinforcements 
+
+When the spare tire well was removed, the sheet metal in the trunk
+of the car became floppy and poorly supported.
+There was a pile of 0.5"x1" steel U channel in the bargain bin at the
+metals shop, so two lengths of that was used to reinforce the trunk.
+
+The steel was painted, and then sanded along with the body steel at the
+welding points, then the U channels were welded into place.
+
+.Trunk reinforcements - top
+image::battery_boxes/rear/trunk_reinforcements_top.png[]
+
+.Trunk reinforcements - bottom
+image:battery_boxes/rear/trunk_reinforcements_bot.png[]
+
+== Rear Battery Mounting
+
+The rear battery will weigh approximately 260 lbs, which is a bit more
+than the ~120 lbs weight of a full fuel tank.
+The fuel tank mounted to the chassis using two straps which were fastened 
+to the underbody with M10 bolts.
+The rear battery assembly will be bolted to the frame rail with 3 steel straps.
+
+The straps were modelled in blender to calculate the required angles.
+
+.Rear battery straps model
+image::battery_boxes/rear/rear_bat_blender_straps.png[]
+
+The straps were bent, reinforced with welds, and assembled onto the battery
+assembly with four M8 bolts each. The M8 bolt heads are sunk into the 0.5" square
+tube as to not interfere with the brackets that hold the battery cells in place.
+
+.Rear battery straps - nut side
+image::battery_boxes/rear/straps_on_rear_bat.png[]
+
+.Rear battery straps - bolt side
+image::battery_boxes/rear/straps_on_rear_bat_inner.png[]
+
+== Brackets
+
+The rear-most strap mounting points were fabricated first. The frame rails
+already had three M8 tapped holes on each side of the car.
+The hole set on the left side of the car were used to attach an exhaust hanger
+bracket. This bracket was pretty thin and crusty, so a new bracket was made
+out of zinc plated steel.
+
+.Existing crusty bracket
+image::battery_boxes/rear/crusty_rear_bracket.png[]
+
+.New right-side rear-most bracket
+image::battery_boxes/rear/new_rear_bracket.png[]
+
+JIS M12 flange nuts were welded to each of the rear brackets.
+The zinc coatings on both the steel and the nuts outgassed while welding.
+I rarely pick up the welding torch without putting on a HEPA filter mask now.
+
+.Rear brackets with M12 nut
+image::battery_boxes/rear/rear_brackets.png[]
+
+By this point, the battery box sheet steel started getting surface rust,
+so the metal was primed and reassembled. A polycarbonate lid was cut to size
+and holes were drilled and tapped to mount it to the battery box.
+
+.Painted rear battery box with tapped holes for the lid
+image::battery_boxes/rear/painted_rear_battery_box.png[]
+
+.Polycarbonate lid
+image::battery_boxes/rear/polycarbonate_lid.png[]
+
+The battery assembly was lifted into position with a motorcycle jack and held in place
+with some aluminum TIG welding rod. Neoprene foam will eventually be used as a vibration
+dampener between the battery box lid and the trunk reinforcements.
+
+.Rear battery mocked up in position
+image::battery_boxes/rear/rear_box_in_position.png[]
+
+The rear battery strap was modified to mate to the rear brackets and reinforced.
+
+.Rear strap ends without bolt hole
+image::battery_boxes/rear/rear_strap_reinforcement.png[]
+
+The front strap was fabricated next. The frame rails already have two M8 holes
+on the left side and an M10 hole on the right. The front strap fastened to all three holes.
+
+.Front strap assembly
+image::battery_boxes/rear/front_strap.png[]
+
+The front and rear straps were attached to the battery assembly, and the assembly
+was bolted into place in preparation for fabricating the middle strap brackets.
+
+.Front and rear straps on battery box
+image::battery_boxes/rear/front_and_rear_strap_on_box.png[]
+
+.Battery box in position with incomplete middle strap
+image::battery_boxes/rear/middle_strap_mockup_1.png[]
+
+.Middle strap mockup
+image::battery_boxes/rear/middle_strap_mockup_2.png[]
+
+There are no existing bolt holes near where the middle strap needs to mount,
+so holes for M10 bolts were drilled through the frame rails to support brackets on
+both sides of the car. The wall thickness of the frame rails is nearly 1/4" at these locations,
+but a steel tube will be welded into the rail to prevent any chance of over-compression.
+
+.Middle strap bracket
+image::battery_boxes/rear/middle_strap_bracket.png[]
+
+.Rear battery mounts
+image::battery_boxes/rear/rear_battery_all_mounted.png[]
+
+The rear battery protrudes a bit, but it is level the bottom of the differential.
+
+.Final rear battery protrusion
+image::battery_boxes/rear/rear_battery_final_protrusion.png[]

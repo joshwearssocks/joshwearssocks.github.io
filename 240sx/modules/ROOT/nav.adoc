@@ -2,4 +2,6 @@
 * xref:3d_scanners.adoc[]
 * xref:3d_models.adoc[]
 * xref:component_layout.adoc[]
-* xref:battery_boxes.adoc[]
+* xref:batteries.adoc[]
+** xref:front_battery_box.adoc[]
+** xref:rear_battery_box.adoc[]
