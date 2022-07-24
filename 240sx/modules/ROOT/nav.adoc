@@ -5,3 +5,5 @@
 * xref:batteries.adoc[]
 ** xref:front_battery_box.adoc[]
 ** xref:rear_battery_box.adoc[]
+* xref:transaxle.adoc[]
+* xref:motor.adoc[]

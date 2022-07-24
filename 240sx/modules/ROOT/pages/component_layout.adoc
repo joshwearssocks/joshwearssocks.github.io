@@ -3,7 +3,7 @@
 
 Determining where to place the components was a major challenge for this project.
 There are multiple options for component placement, but I ended up choosing
-<<The Busy Engine Bay>>.
+<<The Partially Redesigned Motor Housing>>.
 
 == The Reverse Spark
 
