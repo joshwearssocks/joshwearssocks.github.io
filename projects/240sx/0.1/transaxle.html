@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Transaxle :: Joshua Smith</title>
+    <link rel="canonical" href="https://www.giliath.org/240sx/0.1/transaxle.html">
+    <link rel="prev" href="rear_battery_box.html">
+    <link rel="next" href="motor.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="navbar-item" href="https://www.giliath.org">Joshua Smith</a>
+        <span class="separator">//</span>
+        <a href="https://www.giliath.org/projects">Projects</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="240sx" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="background.html">240SX EV Conversion</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="background.html">Background</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="3d_scanners.html">3D Scanners</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="3d_models.html">3D Models</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="component_layout.html">Component Layout</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="batteries.html">Batteries</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="front_battery_box.html">Front Battery Box</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rear_battery_box.html">Rear Battery Box</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="transaxle.html">Transaxle</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="motor.html">Motor</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">240SX EV Conversion</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="background.html">240SX EV Conversion</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="background.html">0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="background.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="background.html">240SX EV Conversion</a></li>
+    <li><a href="transaxle.html">Transaxle</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/joshwearssocks/joshwearssocks.github.io/edit/main/240sx/modules/ROOT/pages/transaxle.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Transaxle</h1>
+<div class="paragraph">
+<p>After several months of 3D scanning, taking measurements, and rearranging models in CAD,
+I determined that the motor had to stay in its original housing, and it had to live
+at the front of the transmission tunnel.</p>
+</div>
+<div class="paragraph">
+<p>The original transaxle collides with the steering rack in this configuration.
+One workaround could be to relocate the steering rack forward. This is a common modification
+for drift cars with modified knuckles, but it would severely impact Ackerman steering
+geometry in an otherwise unmodified steering setup.
+The steering shafts could have been modified to maintain the original pivot point positions
+after relocating the rack, but I did not trust myself to perform this modification
+without causing the steering rack to bind or not operate reliably.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/transaxle/transaxle_rack_collision.png" alt="transaxle rack collision">
+</div>
+<div class="title">Figure 1. Transaxle / steering rack collision</div>
+</div>
+<div class="paragraph">
+<p>I decided to ditch the transaxle and replace it with a custom faceplate.
+The faceplate was designed in FreeCAD using an image and a 3D model as a reference.
+To ensure that the reference image scaling was accurate, the original motor/transaxle
+gasket was scanned in an enterprise printer with a large scan bed.</p>
+</div>
+<div class="paragraph">
+<p>The custom faceplate consists of three parts.
+The larger two parts are designed to be machined from 1.5" thick aluminum plate.
+Standard oil resistant O-rings are used to seal all interfaces.
+10AN fittings are used for the oil pump inlet and outlet, and the original electrical
+connector is used to connect the vehicle harness to the motor&#8217;s hall effect sensors.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/transaxle/custom_motor_faceplate.png" alt="custom motor faceplate">
+</div>
+<div class="title">Figure 2. Custom motor faceplate</div>
+</div>
+<div class="paragraph">
+<p>After spending a week designing the custom faceplate, I decided to try chopping up the transaxle
+to see if it would be possible to just use the inner pieces of that instead.
+Reusing the original transaxle would save ~$700 in raw materials and other components over
+building the custom faceplate.</p>
+</div>
+<div class="paragraph">
+<p>After becoming intimately familiar with the grinder for a day&#8230;&#8203;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/transaxle/transaxle_disassembly.png" alt="transaxle disassembly">
+</div>
+<div class="title">Figure 3. Transaxle disassembly</div>
+</div>
+<div class="paragraph">
+<p>&#8230;&#8203;the transaxle core was liberated.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/transaxle/transaxle_core.png" alt="transaxle core">
+</div>
+<div class="title">Figure 4. Transaxle core after disassembly</div>
+</div>
+<div class="paragraph">
+<p>There were many openings in the core of the transaxle.
+One hole provided clearance, another secured a cable tie, and various other holes were
+added for components to pass through.
+Only a few holes in the assembly appear to be designed for oil passage.
+Most of these holes were quick to plug up with some aluminum filler rod, though
+welding 1/4" aluminum on a 120V, 15A circuit was a challenge.
+The breaker for this circuit had to be reset about 30 times throughout the welding process.
+There are two separate 120V circuits in the garage, and those circuits will be joined together
+for future aluminum welding projects.</p>
+</div>
+<div class="paragraph">
+<p>Some 1/4" 6061 bar stock was used to plug a hole with an opening for an oil drain port.
+This drain port will feed into the oil pump, which used to be located in the sump of the
+transaxle that is now removed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/transaxle/transaxle_hole_welding_prep.png" alt="transaxle hole welding prep">
+</div>
+<div class="title">Figure 5. Transaxle hole welding prep</div>
+</div>
+<div class="paragraph">
+<p>The cast aluminum was relatively easy to weld despite the breaker constantly flipping.
+The aluminum was not too porous, and the welding surfaces were prepped by using the TIG torch
+without filler to drive air pockets up to the surface.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/transaxle/transaxle_core_after_initial_welds.png" alt="transaxle core after initial welds">
+</div>
+<div class="title">Figure 6. Transaxle core after initial welds</div>
+</div>
+<div class="paragraph">
+<p>The remaining opening will be modified to fit a bulkhead connector for the six hall effect
+sensor wires.
+By keeping the original transaxle core, I will also be able to re-use the existing
+thrust bearing surfaces to support the driveshaft.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a bonus shot of the motor from the driveshaft hole in the transaxle.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/transaxle/motor_view_from_transaxle.png" alt="motor view from transaxle">
+</div>
+<div class="title">Figure 7. Motor view from transaxle</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="rear_battery_box.html">Rear Battery Box</a></span>
+  <span class="next"><a href="motor.html">Motor</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

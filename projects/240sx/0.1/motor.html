@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Motor :: Joshua Smith</title>
+    <link rel="canonical" href="https://www.giliath.org/240sx/0.1/motor.html">
+    <link rel="prev" href="transaxle.html">
+    <meta name="generator" content="Antora 3.0.3">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../favicon.ico" type="image/x-icon">    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="navbar-item" href="https://www.giliath.org">Joshua Smith</a>
+        <span class="separator">//</span>
+        <a href="https://www.giliath.org/projects">Projects</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="240sx" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="background.html">240SX EV Conversion</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="background.html">Background</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="3d_scanners.html">3D Scanners</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="3d_models.html">3D Models</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="component_layout.html">Component Layout</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="batteries.html">Batteries</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="front_battery_box.html">Front Battery Box</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rear_battery_box.html">Rear Battery Box</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="transaxle.html">Transaxle</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="motor.html">Motor</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">240SX EV Conversion</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="background.html">240SX EV Conversion</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="background.html">0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="background.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="background.html">240SX EV Conversion</a></li>
+    <li><a href="motor.html">Motor</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/joshwearssocks/joshwearssocks.github.io/edit/main/240sx/modules/ROOT/pages/motor.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Motor</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>With the transaxle modifications sorted, it is time to design the motor sub-frame.
+The original motor mounts in the Spark had large rubber dampeners, but given the space
+constraints I decided to rigid mount the motor to the sub-frame.
+The long driveshaft and rubber differential mounts should be able to provide some dampening,
+but the motor sub-frame will need to be sturdy enough to support the instantaneous torque.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sub-frame-design"><a class="anchor" href="#sub-frame-design"></a>Sub-frame Design</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The transaxle core was re-scanned and imported into the blender model to mock up the
+sub-frame design. The sub-frame uses a steel tube construction and mounts to the frame
+rails in four locations.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_subframe_model_bottom.png" alt="motor subframe model bottom">
+</div>
+<div class="title">Figure 1. Motor sub-frame model - bottom view</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_subframe_model_front.png" alt="motor subframe model front">
+</div>
+<div class="title">Figure 2. Motor sub-frame model - front view</div>
+</div>
+<div class="paragraph">
+<p>After verifying that there were no collisions with the power electronics model,
+measurements were taken from the Blender model of the sub-frame and used for fabrication.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="main-sub-frame-fabrication"><a class="anchor" href="#main-sub-frame-fabrication"></a>Main Sub-frame Fabrication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Two mounting holes at the rear side of the motor are level with the lower cross member of the
+sub-frame, so 1" square tube was used for the lower cross member.
+1.5" round tube was used for the side pieces, and some leftover stainless steel tubing was
+used for the upper member.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_subframe_1.png" alt="motor subframe 1">
+</div>
+<div class="title">Figure 3. Motor sub-frame 1</div>
+</div>
+<div class="paragraph">
+<p>A piece of 1" square tube was cut in half to create two U-shaped channels.
+Two class 10.9 equivalent M12 nuts were welded to the inside of each channel, and then
+the channels were welded to the side pieces.
+Some primer was sprayed onto the insides of the channel and on the round tube before welding
+to minimize corrosion in this hard-to-reach areas, but most of the paint ended up evaporating.
+Fluid Film will be used to coat the areas without paint after final assembly.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_subframe_2.png" alt="motor subframe 2">
+</div>
+<div class="title">Figure 4. Motor sub-frame 2</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="motor-brackets"><a class="anchor" href="#motor-brackets"></a>Motor Brackets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While the rear of the motor is bolted directly to the sub-frame, the sides of the motor are fastened
+to brackets, which bolt to the sub-frame from below.</p>
+</div>
+<div class="paragraph">
+<p>The right side bracket consists of multiple layers of sheet steel for added rigidity.
+The bracket is not yet reinforced enough to prevent it from flexing.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_bracket_r.png" alt="motor bracket r">
+</div>
+<div class="title">Figure 5. Motor bracket - right</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_bracket_r_underside.png" alt="motor bracket r underside">
+</div>
+<div class="title">Figure 6. Motor bracket - right underside</div>
+</div>
+<div class="paragraph">
+<p>The left side bracket is secured to the motor with four M8 bolts.
+The center points for the bolt holes were located by looking at the threaded standoffs
+from various angles that are all perpendicular to the bolt direction, then blindly drawing
+a line with a permanent marker such that the marker always stayed in the center of the standoff
+from the current view perspective.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_bracket_l.png" alt="motor bracket l">
+</div>
+<div class="title">Figure 7. Motor bracket - left</div>
+</div>
+<div class="paragraph">
+<p>The sub-frame and brackets were fitted to the motor on the bench.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_subframe_with_brackets.png" alt="motor subframe with brackets">
+</div>
+<div class="title">Figure 8. Motor sub-frame with brackets</div>
+</div>
+<div class="paragraph">
+<p>Additional pieces of bent sheet steel were added to directly connect the remaining rear motor bolts
+to the subframe.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sub-frame-chassis-mounts"><a class="anchor" href="#sub-frame-chassis-mounts"></a>Sub-frame Chassis Mounts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mounting the sub-frame to the chassis was challenging.
+This was partially due to having to constantly shuffle in and out from underneath the car with
+the large sub-frame.</p>
+</div>
+<div class="paragraph">
+<p>Additional round tube was added to mount the front of the motor sub-frame to the chassis.
+Some bent pieces of sheet steel were tacked in place at the end of the tubes to provide
+fastening points.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_subframe_3.png" alt="motor subframe 3">
+</div>
+<div class="title">Figure 9. Motor sub-frame 3</div>
+</div>
+<div class="paragraph">
+<p>More M12 nuts were welded to the back of steel plates, and the plates were welded to the frame rails
+on both sides of the car.
+The brackets that were tacked in place on the bench were close, but not quite aligned to the
+steel plates.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_subframe_in_car_1.png" alt="motor subframe in car 1">
+</div>
+<div class="title">Figure 10. Sub-frame mocked up in the car for bracket positioning</div>
+</div>
+<div class="paragraph">
+<p>The brackets at the end of the steel tubes were removed, bolted to the frame rails, then re-tacked
+in place before being fully welded.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_subframe_in_car_2.png" alt="motor subframe in car 2">
+</div>
+<div class="title">Figure 11. Sub-frame front brackets fastened to the chassis</div>
+</div>
+<div class="paragraph">
+<p>The lower chassis mount is designed to bolt straight through the frame rails using 100mm long
+class 10.9 M10 bolts with class 10.9 equivalent nuts.
+To prevent these fasteners from compressing the frame rails, a steel tube is welded through
+both frame rails.
+Welding these tubes through the frame rails was the most challenging part of designing the
+motor sub-frame.
+The frame rails are constructed from multiple thick sheets of steel which are spot welded together.
+When welding to the outer-most layer, the air expands between layers and causes the weld pool
+to explode outwards.
+These molten metal explosions burned through clothing and constantly gobbed up the tungsten.
+Most of the time spent on this welding process was shuffling out from under the car to the grinder
+to re-sharpen the tungsten.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/chassis_through_bolt_reinforcement.png" alt="chassis through bolt reinforcement">
+</div>
+<div class="title">Figure 12. Chassis through-bolt reinforcement welds</div>
+</div>
+<div class="paragraph">
+<p>Eventually, the job was completed and the sub-frame was fully mounted to the chassis.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_subframe_in_car_3.png" alt="motor subframe in car 3">
+</div>
+<div class="title">Figure 13. Sub-frame fully bolted to the car</div>
+</div>
+<div class="paragraph">
+<p>The left side of the car was subjected to a few brake fluid leaks and extra heat from the exhaust.
+Because of this, there is a lot more surface rust along the left side of the chassis, whereas
+there is virtually no rust on the right side.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="motor-fitment"><a class="anchor" href="#motor-fitment"></a>Motor Fitment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The motor is lifted into position from underneath the car using a motorcycle jack.
+Once close to being in position, the motor brackets are fastened to the sub-frame from underneath,
+then the five rear bolts are installed.</p>
+</div>
+<div class="paragraph">
+<p>There is ample clearance around the motor for hoses and wiring.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_fit_rear.png" alt="motor fit rear">
+</div>
+<div class="title">Figure 14. Motor fitment - rear</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/motor_fit_front.png" alt="motor fit front">
+</div>
+<div class="title">Figure 15. Motor fitment - front</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sub-frame-reinforcement"><a class="anchor" href="#sub-frame-reinforcement"></a>Sub-frame Reinforcement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Reinforcements were added to the 1" square tube to minimize sagging or bending under load,
+then the subframe was primed to prevent rusting as the project progresses.
+All components will be removed and properly painted once all the mechanical assemblies
+are fully completed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/primed_subframe_1.png" alt="primed subframe 1">
+</div>
+<div class="title">Figure 16. Primed sub-frame 1</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/motor/primed_subframe_2.png" alt="primed subframe 2">
+</div>
+<div class="title">Figure 17. Primed sub-frame 2</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="transaxle.html">Transaxle</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
