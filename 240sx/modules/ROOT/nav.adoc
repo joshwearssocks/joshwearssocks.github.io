@@ -7,3 +7,4 @@
 ** xref:rear_battery_box.adoc[]
 * xref:transaxle.adoc[]
 * xref:motor.adoc[]
+* xref:power_electronics.adoc[]

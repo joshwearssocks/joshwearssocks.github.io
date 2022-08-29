@@ -1,0 +1,39 @@
+= Power Electronics
+:navtitle: Power Electronics
+
+The Spark's power electronics mount to a lightweight steel sub-frame.
+
+.Spark power electronics sub-frame
+image::power_electronics/spark_subframe.png[]
+
+The sub-frame has 4 mounting points and many grounding studs.
+
+.Power electronics mounted on sub-frame
+image::power_electronics/electronics_on_subframe.png[]
+
+Relatively few modifications were required to fit the sub-frame into the 240sx chassis.
+
+* The front arms were shortened to fit within the skinnier engine bay.
+* The rear arms, which sloped downwards, were cut off and replaced with square tubing.
+* Some material was removed to add clearance to the motor assembly.
+* Material was removed to add clearance for the steering column.
+
+.Modified sub-frame mounted in 240sx
+image::power_electronics/mounted_subframe.png[]
+
+.Motor mount clearance
+image::power_electronics/motor_mount_clearance.png[]
+
+To secure the rear mounting points of the sub-frame, M10 nuts were welded directly into the top of the frame rails.
+The front of the sub-frame fastens to M10 nuts which were welded to posts fabricated from round tube scrap.
+
+The stacked sheet metal which makes up this part of the frame rails was once again painful to weld to.
+The expansion between sheets caused molten metal to burst out and melt through multiple layers of clothing.
+
+.Steering column clearance and front chassis mount
+image::power_electronics/steering_clearance.png[]
+
+Once the sub-frame was fastened to the chassis, the power electronics were quick to install.
+
+.Assembled sub-frame with electronics
+image::power_electronics/mounted_subframe_w_electronics.png[]
