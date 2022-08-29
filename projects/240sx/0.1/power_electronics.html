@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Batteries :: Joshua Smith</title>
-    <link rel="canonical" href="https://www.giliath.org/240sx/0.1/batteries.html">
-    <link rel="prev" href="component_layout.html">
-    <link rel="next" href="front_battery_box.html">
+    <title>Power Electronics :: Joshua Smith</title>
+    <link rel="canonical" href="https://www.giliath.org/240sx/0.1/power_electronics.html">
+    <link rel="prev" href="motor.html">
     <meta name="generator" content="Antora 3.1.0">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="icon" href="../../favicon.ico" type="image/x-icon">    <script>var uiRootPath = '../../_'</script>
@@ -50,7 +49,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="component_layout.html">Component Layout</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="batteries.html">Batteries</a>
 <ul class="nav-list">
@@ -68,7 +67,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="motor.html">Motor</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="power_electronics.html">Power Electronics</a>
   </li>
 </ul>
@@ -102,72 +101,91 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="background.html">240SX EV Conversion</a></li>
-    <li><a href="batteries.html">Batteries</a></li>
+    <li><a href="power_electronics.html">Power Electronics</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/joshwearssocks/joshwearssocks.github.io/edit/main/240sx/modules/ROOT/pages/batteries.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/joshwearssocks/joshwearssocks.github.io/edit/main/240sx/modules/ROOT/pages/power_electronics.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Batteries</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">Power Electronics</h1>
 <div class="paragraph">
-<p>The OEM battery back is too bulky and oddly shaped to fit into the car as-is.
-The entire pack needs to be disassembled and split into two sections
-to fit in the 240sx chassis.</p>
+<p>The Spark&#8217;s power electronics mount to a lightweight steel sub-frame.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/battery_boxes/oe_box.png" alt="oe box">
+<img src="_images/power_electronics/spark_subframe.png" alt="spark subframe">
 </div>
-<div class="title">Figure 1. OE battery box</div>
+<div class="title">Figure 1. Spark power electronics sub-frame</div>
 </div>
 <div class="paragraph">
-<p>All the rear suspension needed to be disassembled to remove the battery pack
-from the Spark. This vehicle was not designed with quick battery swapping in mind&#8230;&#8203;</p>
+<p>The sub-frame has 4 mounting points and many grounding studs.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/battery_boxes/spark_rear_underbody.png" alt="spark rear underbody">
+<img src="_images/power_electronics/electronics_on_subframe.png" alt="electronics on subframe">
 </div>
-<div class="title">Figure 2. Spark rear underbody</div>
+<div class="title">Figure 2. Power electronics mounted on sub-frame</div>
 </div>
 <div class="paragraph">
-<p>After removing the top lid, the contactor assembly (left), BMS (mounted to cell 3),
-battery disconnect (above cell 2), water cooling assembly, and the 6 cells are revealed.</p>
+<p>Relatively few modifications were required to fit the sub-frame into the 240sx chassis.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The front arms were shortened to fit within the skinnier engine bay.</p>
+</li>
+<li>
+<p>The rear arms, which sloped downwards, were cut off and replaced with square tubing.</p>
+</li>
+<li>
+<p>Some material was removed to add clearance to the motor assembly.</p>
+</li>
+<li>
+<p>Material was removed to add clearance for the steering column.</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/battery_boxes/oe_box_interior.png" alt="oe box interior">
+<img src="_images/power_electronics/mounted_subframe.png" alt="mounted subframe">
 </div>
-<div class="title">Figure 3. OE battery box interior</div>
+<div class="title">Figure 3. Modified sub-frame mounted in 240sx</div>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/power_electronics/motor_mount_clearance.png" alt="motor mount clearance">
 </div>
-</div>
-<div class="sect1">
-<h2 id="material-choices"><a class="anchor" href="#material-choices"></a>Material Choices</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The OE box is made out of a plastic/fiberglass composite with steel supporting structures.
-A thick adhesive is used to waterproof all the steel/composite junctions.</p>
+<div class="title">Figure 4. Motor mount clearance</div>
 </div>
 <div class="paragraph">
-<p>For the custom battery box assemblies, I decided to use 20 gauge sheet steel with 1/2"
-16 gauge steel square tube for structure. Aluminum tread plate was another option, but the original
-battery box already had connector faceplates laser cut out of steel, and I wanted to reuse those.</p>
+<p>To secure the rear mounting points of the sub-frame, M10 nuts were welded directly into the top of the frame rails.
+The front of the sub-frame fastens to M10 nuts which were welded to posts fabricated from round tube scrap.</p>
 </div>
 <div class="paragraph">
-<p>To electrically insulate the interior, fiberglass can be secured on the inner sides of the box.</p>
+<p>The stacked sheet metal which makes up this part of the frame rails was once again painful to weld to.
+The expansion between sheets caused molten metal to burst out and melt through multiple layers of clothing.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/power_electronics/steering_clearance.png" alt="steering clearance">
 </div>
+<div class="title">Figure 5. Steering column clearance and front chassis mount</div>
+</div>
+<div class="paragraph">
+<p>Once the sub-frame was fastened to the chassis, the power electronics were quick to install.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/power_electronics/mounted_subframe_w_electronics.png" alt="mounted subframe w electronics">
+</div>
+<div class="title">Figure 6. Assembled sub-frame with electronics</div>
 </div>
 <nav class="pagination">
-  <span class="prev"><a href="component_layout.html">Component Layout</a></span>
-  <span class="next"><a href="front_battery_box.html">Front Battery Box</a></span>
+  <span class="prev"><a href="motor.html">Motor</a></span>
 </nav>
 </article>
   </div>
