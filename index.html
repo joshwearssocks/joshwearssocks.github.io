@@ -56,7 +56,7 @@
          <div class="banner-text">
             <h1 class="responsive-headline">Joshua Smith</h1>
             <h3>I am a well rounded <span>electrical engineer</span> with a passion for <span>documentation</span> and 
-            <span>process efficiency</span>. I have experience <span>managing</span> medium sized teams, and I can also develop 
+            <span>process efficiency</span>. I have experience <span>managing</span> medium sized teams, and I can develop 
             complete products myself, including <span>HDI PCBAs</span>, <span>firmware</span>, <span>mechanicals</span>, 
             <span>software APIs</span>, and <span>CI test infrastructure</span>.
             At home, I stay busy with family and <a class="smoothscroll" href="#portfolio">projects</a>.</h3>
@@ -88,12 +88,12 @@
             <h2>Goals</h2>
 
             <p>I am interested in working on projects that have a positive impact on the environment.
-            A variety of projects and responsibilities keeps work interesting.
             In a hardware development setting, I enjoy working on architecture, schematic capture,
             layout, and test infrastructure.
-            In a software development setting, I enjoy developing test software for embedded and Linux
-            domains. Most of my software development experience is in Python and C, but I am
-            interested in learning Rust to create more optimized programs.
+            In a software development setting, I enjoy developing regression and stress test software 
+            for embedded and Linux domains.
+            Most of my software development experience is in Python, Bash, and C, though I use C++ for
+            personal projects and I am beginning to learn Rust.
             </p>
 
             <div class="row">
@@ -109,11 +109,11 @@
 
                </div>
 
-               <div class="columns download">
+               <!--<div class="columns download">
                   <p>
                      <a href="#" class="button"><i class="fa fa-download"></i>Download Resume</a>
                   </p>
-               </div>
+               </div>-->
 
             </div> <!-- end row -->
 
@@ -147,7 +147,7 @@
 
                   <ul>
                      <li>Army Research Laboratory internship: Designed software for a spectrum sensing system (C/LabVIEW).</li>
-                     <li>Formula SAE: Electronical subsystems team lead.</li>
+                     <li>Formula SAE: Led the electrical subsystems team.</li>
                   </ul>
 
                </div>
@@ -177,35 +177,6 @@
                   <p class="info">Senior Hardware Engineer / Manager I <span>&bull;</span> <em class="date">April 2017 - Present</em></p>
 
                   <ul>
-                     <li><b>Compute hardware</b>
-                        <ul class="points">
-                           <li>PCBA schematic capture and layout of a PCIe mezzanine card for an automotive reference design.</li>
-                           <li>GPU heatsink design.</li>
-                           <li>Schematic capture and layout for multiple high speed and high power PCBAs within Argo's first
-                           prototype autonomous vehicle computer.</li>
-                           <li>Manufacturing end of line test fixture and script development (Bash/Python) for computer PCBAs.</li>
-                           <li>Second generation compute hardware architecture design and schematic reviews.</li>
-                           <li>Bring-up and self-documenting compute stress test software (Python).</li>
-                           <li>External GPU prototype design, schematic capture, and layout.</li>
-                        </ul>
-                     </li>
-                     <li><b>Argo Lidar</b>
-                        <ul class="points">
-                           <li>Power regulation and motor control PCBA schematic capture and layout.</li>
-                           <li>Motor controller bringup and characterization.</li>
-                        </ul>
-                     </li>
-                     <li><b>Development hardware</b>
-                        <br>For each of these projects, I designed the archtecture, made proposals to get funding, did schematic
-                           capture, layout, mechanical design, firmware development, software API development, documentation, 
-                           and managed the manufacturing process.
-                        <ul class="points">
-                           <li>All-in-one fault injection testing system that interacted with the external interfaces of 
-                           compute modules. This was also used to automated CI test fixtures.</li>
-                           <li>Automotive ethernet converter based on an automotive PHY reference design.</li>
-                           <li>Low-cost automotive ethernet adapter to support large scale fleet operations.</li>
-                        </ul>
-                     </li>
                      <li><b>FPGA MPSoC tools and testing</b> (current)
                         <br>In this role, I manage a team of 10 cross functional engineers.
                            This team is responsible for maintaining build and test infrastructure for the FPGA teams,
@@ -219,6 +190,38 @@
                            <li>Architected and broadly popularized an automated release process that enforces traceability.</li>
                            <li>Centralized most documentation into a single website built with Asciidoctor and Antora.</li>
                            <li>Supported engineering process definition in alignment with ASPICE and ISO26262 guidelines.</li>
+                        </ul>
+                     </li>
+                     <li><b>Compute hardware</b>
+                        <ul class="points">
+                           <li>Designed (schematic + layout) a PCIe mezzanine card for an automotive reference design platform.</li>
+                           <li>Designed a GPU heatsink.</li>
+                           <li>Designed multiple high speed and high power PCBAs within Argo's first
+                           prototype autonomous vehicle computer.</li>
+                           <li>Developed manufacturing end of line test fixtures and scripts (Bash/Python) for computer PCBAs.</li>
+                           <li>Supported second generation compute hardware architecture and schematic reviews.</li>
+                           <li>Developed software for compute hardware bringup and stress testing (Python).</li>
+                           <li>Designed a PCBA set for a cabled external accelerator card.</li>
+                        </ul>
+                     </li>
+                     <li><b>Argo Lidar</b>
+                        <ul class="points">
+                           <li>Designed a PCBA for power regulation and motor control.</li>
+                           <li>Brought up and characterized the motor controller.</li>
+                        </ul>
+                     </li>
+                     <li><b>Development hardware</b>
+                        <br>For each of these projects, I designed the archtecture, made proposals to get funding, did schematic
+                           capture, layout, mechanical design, firmware development, software API development, documentation, 
+                           and managed the manufacturing process.
+                        <ul class="points">
+                           <li>All-in-one fault injection testing system that interacted with the external interfaces of 
+                           compute modules. This was also used to automated CI test fixtures.</li>
+                           <li>Automotive ethernet converter based on an automotive PHY reference design.</li>
+                           <li>Low-cost automotive ethernet adapter to support large scale fleet operations.</li>
+                           <li>Portable Xeon development server (using an automotive reference motherboard) with a low profile 
+                              MXM GPU mezzanine card and front panel with SFP+ modules, oculink, and accessory power.
+                           </li>
                         </ul>
                      </li>
                   </ul>
@@ -277,8 +280,7 @@
                <li>Python: advanced usage with dataclasses, threading, decorators, etc.</li>
                <li>Bash: multithreaded scripting, GNU standard programs</li>
                <li>C: proficient skill in embedded applications; some Linux kernel experience</li>
-               <li>C++: enough familiarity to read and modify existing code</li>
-               <li>Starlark: it's just Python, but less!</li>
+               <li>C++: hobbyist level experience</li>
                <li>Regex: can quickly create expressions without using a cheat sheet</li>
             </ul>
             <h5>Software Infrastructure</h5>
@@ -292,8 +294,8 @@
             <ul class="points">
                <li>High speed, high density circuit board design</li>
                <li>Communication protocols: SPI, I2C (and derivitives), UART, CAN, PCIe, *MII, *BASE-T*</li>
-               <li>Automotive electronics design: EMI/EMC compliance, data integrity, etc.</li>
-               <li>Sheet metal, CNC, injection mold, 3D print, etc. design and manufacturing</li>
+               <li>Automotive electronics design: EMI/EMC compliance, power and data integrity, etc.</li>
+               <li>Sheet metal, CNC, injection mold, 3D print, etc. part design and manufacturing</li>
             </ul>
             <h5>Hardware Design Tools</h5>
             <ul class="points">
