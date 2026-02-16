@@ -1,396 +1,228 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giliath</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-   <!--- Basic Page Needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>Giliath</title>
-	<meta name="description" content="The host of all stars">
-	<meta name="author" content="Joshua Smith">
+        body {
+            background-color: #000;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
 
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        .content-container {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            background: rgba(0, 100, 255, 0.15);
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8),
+                        inset 0 0 20px rgba(0, 100, 255, 0.3),
+                        0 0 5px rgba(0, 255, 255, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
 
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
+    .portfolio-link {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8),
+                        0 0 5px rgba(0, 255, 255, 0.5);
+        }
 
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
+        .portfolio-link::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            background: conic-gradient(
+                transparent 0deg,
+                rgba(0, 255, 255, 0.8) 90deg,
+                transparent 180deg,
+                rgba(0, 255, 255, 0.8) 270deg,
+                transparent 360deg
+            );
+            z-index: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.ico" >
+        @keyframes rotate-border {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
+        .portfolio-link:hover::before {
+            animation: rotate-border 3s linear infinite;
+            opacity: 1;
+        }
+
+        .portfolio-link:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes rotate-border {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .portfolio-link img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+        }
+
+        main {
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        #starfield {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
-
 <body>
-
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Projects</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">Joshua Smith</h1>
-            <h3>I am a well rounded <span>electrical engineer</span> with a passion for <span>documentation</span> and 
-            <span>process efficiency</span>. I have experience <span>managing</span> medium sized teams, and I can develop 
-            complete products myself, including <span>HDI PCBAs</span>, <span>firmware</span>, <span>mechanicals</span>, 
-            <span>software APIs</span>, and <span>CI test infrastructure</span>.
-            At home, I stay busy with family and <a class="smoothscroll" href="#portfolio">projects</a>.</h3>
-            <hr />
-         </div>
-      </div>
-
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
-
-   </header> <!-- Header End -->
-
-
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
-
-         </div>
-
-         <div class="nine columns main-col">
-
-            <h2>Goals</h2>
-
-            <p>I am interested in working on projects that have a positive impact on the environment.
-            In a hardware development setting, I enjoy working on architecture, schematic capture,
-            layout, and test infrastructure.
-            In a software development setting, I enjoy developing regression and stress test software 
-            for embedded and Linux domains.
-            Most of my software development experience is in Python, Bash, and C, though I use C++ for
-            personal projects and I am beginning to learn Rust.
-            </p>
-
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  <h2>Contact Details</h2>
-                  <p class="address">
-						   <span>Joshua Smith</span><br>
-                     <span>joshua at giliath dot org</span><br>
-						   <a href="https://www.linkedin.com/in/joshua-smith-26831082/"><span>LinkedIn</span></a>
-					   </p>
-
-               </div>
-
-               <!--<div class="columns download">
-                  <p>
-                     <a href="#" class="button"><i class="fa fa-download"></i>Download Resume</a>
-                  </p>
-               </div>-->
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-
-      </div>
-
-   </section> <!-- About Section End-->
-
-
-   <!-- Resume Section
-   ================================================== -->
-   <section id="resume">
-
-      <!-- Education
-      ----------------------------------------------- -->
-      <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span>Education</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Penn State University</h3>
-                  <p class="info">B.S. Electrical Engineering <span>&bull;</span> <em class="date">August 2012 - May 2015</em></p>
-
-                  <ul>
-                     <li>Army Research Laboratory internship: Designed software for a spectrum sensing system (C/LabVIEW).</li>
-                     <li>Formula SAE: Led the electrical subsystems team.</li>
-                  </ul>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Education -->
-
-
-      <!-- Work
-      ----------------------------------------------- -->
-      <div class="row work">
-
-         <div class="three columns header-col">
-            <h1><span>Work</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Argo AI</h3>
-                  <p class="info">Senior Hardware Engineer / Manager I <span>&bull;</span> <em class="date">April 2017 - Present</em></p>
-
-                  <ul>
-                     <li><b>FPGA MPSoC tools and testing</b> (current)
-                        <br>In this role, I manage a team of 10 cross functional engineers.
-                           This team is responsible for maintaining build and test infrastructure for the FPGA teams,
-                           developing test frameworks and software, and coordinating firmware releases across multiple customers.<br>
-                           In addition to managing the team, I:
-                        <ul class="points">
-                           <li>Created a failure-averse distributed HIL test infrastructure using Docker Swarm.</li>
-                           <li>Developed a compute cluster from decomissioned fleet compute hardware with an easy to use
-                              software interface for quickly deploying large simulation and data processing jobs.
-                           </li>
-                           <li>Architected and broadly popularized an automated release process that enforces traceability.</li>
-                           <li>Centralized most documentation into a single website built with Asciidoctor and Antora.</li>
-                           <li>Supported engineering process definition in alignment with ASPICE and ISO26262 guidelines.</li>
-                        </ul>
-                     </li>
-                     <li><b>Compute hardware</b>
-                        <ul class="points">
-                           <li>Designed (schematic + layout) a PCIe mezzanine card for an automotive reference design platform.</li>
-                           <li>Designed a GPU heatsink.</li>
-                           <li>Designed multiple high speed and high power PCBAs within Argo's first
-                           prototype autonomous vehicle computer.</li>
-                           <li>Developed manufacturing end of line test fixtures and scripts (Bash/Python) for computer PCBAs.</li>
-                           <li>Supported second generation compute hardware architecture and schematic reviews.</li>
-                           <li>Developed software for compute hardware bringup and stress testing (Python).</li>
-                           <li>Designed a PCBA set for a cabled external accelerator card.</li>
-                        </ul>
-                     </li>
-                     <li><b>Argo Lidar</b>
-                        <ul class="points">
-                           <li>Designed a PCBA for power regulation and motor control.</li>
-                           <li>Brought up and characterized the motor controller.</li>
-                        </ul>
-                     </li>
-                     <li><b>Development hardware</b>
-                        <br>For each of these projects, I designed the archtecture, made proposals to get funding, did schematic
-                           capture, layout, mechanical design, firmware development, software API development, documentation, 
-                           and managed the manufacturing process.
-                        <ul class="points">
-                           <li>All-in-one fault injection testing system that interacted with the external interfaces of 
-                           compute modules. This was also used to automated CI test fixtures.</li>
-                           <li>Automotive ethernet converter based on an automotive PHY reference design.</li>
-                           <li>Low-cost automotive ethernet adapter to support large scale fleet operations.</li>
-                           <li>Portable Xeon development server (using an automotive reference motherboard) with a low profile 
-                              MXM GPU mezzanine card and front panel with SFP+ modules, oculink, and accessory power.
-                           </li>
-                        </ul>
-                     </li>
-                  </ul>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Ford Motor Company</h3>
-                  <p class="info">Ford College Graduate <span>&bull;</span> <em class="date">June 2015 - April 2017</em></p>
-
-                  <ul>
-                     <li><b>Speech and signal processing</b>
-                        <ul class="points">
-                           <li>Developed a model for lombard speech.</li>
-                           <li>Optimized speech synthesis software for faster operation in Matlab.</li>
-                        </ul>
-                     </li>
-                     <li><b>Additive manufacturing</b>
-                        <ul class="points">
-                           <li>Characterized 3D printed injection mold performance.</li>
-                           <li>Designed and built a Selective Laser Sintering 3D printer.</li>
-                        </ul>
-                     </li>
-                     <li><b>Lidar research</b>
-                        <ul class="points">
-                           <li>Developed scenario-based lidar characterization software using BlenSor and QT.</li>
-                        </ul>
-                     </li>
-                  </ul>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Work -->
-
-
-      <!-- Skills
-      ----------------------------------------------- -->
-      <div class="row skill">
-
-         <div class="three columns header-col">
-            <h1><span>Skills</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-            <h5>Programming Languages</h5>
-            <ul class="points">
-               <li>Python: advanced usage with dataclasses, threading, decorators, etc.</li>
-               <li>Bash: multithreaded scripting, GNU standard programs</li>
-               <li>C: proficient skill in embedded applications; some Linux kernel experience</li>
-               <li>C++: hobbyist level experience</li>
-               <li>Regex: can quickly create expressions without using a cheat sheet</li>
-            </ul>
-            <h5>Software Infrastructure</h5>
-            <ul class="points">
-               <li>Linux: sysfs, procfs, systemd, netplan, journal, modules, dtoverlays, etc.</li>
-               <li>Docker: containers, images, services, swarm</li>
-               <li>Bazel: proficiency with rules, rule definition, configuration</li>
-               <li>Antora/Asciidoctor, Mermaid</li>
-            </ul>
-            <h5>Hardware Design</h5>
-            <ul class="points">
-               <li>High speed, high density circuit board design</li>
-               <li>Communication protocols: SPI, I2C (and derivitives), UART, CAN, PCIe, *MII, *BASE-T*</li>
-               <li>Automotive electronics design: EMI/EMC compliance, power and data integrity, etc.</li>
-               <li>Sheet metal, CNC, injection mold, 3D print, etc. part design and manufacturing</li>
-            </ul>
-            <h5>Hardware Design Tools</h5>
-            <ul class="points">
-               <li>Altium Designer, Altium PDN Analyzer, KiCAD</li>
-               <li>Solidworks, Fusion 360, FreeCAD, Catia V5</li>
-               <li>LTSpice, TinaTI</li>
-            </ul>
-            <h5>Process</h5>
-            <ul class="points">
-               <li>V-model of development</li>
-               <li>ASPICE</li>
-               <li>ISO26262</li>
-            </ul>
-
-			</div> <!-- main-col end -->
-
-      </div> <!-- End skills -->
-
-   </section> <!-- Resume Section End-->
-
-
-   <!-- Portfolio Section
-   ================================================== -->
-   <section id="portfolio">
-
-      <div class="row">
-
-         <div class="twelve columns collapsed">
-
-            <h1>Check Out Some of My Projects.</h1>
-
-            <!-- portfolio-wrapper -->
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="projects/index.html" title="">
-                        <img alt="" src="images/portfolio/motor_internal.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>240sx EV Conversion</h5>
-                              <p>Fabrication / 3D Scanning</p>
-          					   </div>
-                        </div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-            </div> <!-- portfolio-wrapper end -->
-
-         </div> <!-- twelve columns end -->
-
-      </div> <!-- row End -->
-
-   </section> <!-- Portfolio Section End-->
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
-               <li><a href="https://www.linkedin.com/in/joshua-smith-26831082/"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-
-            <ul class="copyright">
-               <li>&copy; Copyright 2022 Joshua Smith</li>
-               <li>Design by <a href="http://www.styleshout.com/" title="Styleshout" target="_blank">Styleshout</a></li>   
-            </ul>
-
-         </div>
-
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
-      </div>
-
-   </footer> <!-- Footer End-->
-
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
-
+    <div class="content-container">
+        <main>
+                <h1>Giliath</h1>
+                <p>The host of all stars</p>
+                <p><br></p>
+                <p>We might be sending humans into deep space before all these projects are completed...</p>
+                <p>Click a link below to learn more.</p>
+                <p><br></p>
+                <a href="projects/index.html" class="portfolio-link">
+                    <img src="images/portfolio/motor_internal.png" alt="Motor Internal">
+                </a>
+            </main>
+    </div>
+    <canvas id="starfield"></canvas>
+
+    <script>
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+
+        let stars = [];
+        let numStars = 3200;
+        let speed = 9;
+        let depthScale = 4;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initializeStars();
+        }
+
+        function initializeStars() {
+            stars = [];
+            for (let i = 0; i < numStars; i++) {
+                const x = (Math.random() - 0.5) * canvas.width * 4;
+                const y = (Math.random() - 0.5) * canvas.height * 4;
+                const z = Math.random() * canvas.width * depthScale;
+                stars.push({ x, y, z, pz: 0 });
+            }
+        }
+
+        function addStars(count) {
+            for (let i = 0; i < count; i++) {
+                const x = (Math.random() - 0.5) * canvas.width * 4;
+                const y = (Math.random() - 0.5) * canvas.height * 4;
+                const z = Math.random() * canvas.width * depthScale;
+                stars.push({ x, y, z, pz: 0 });
+            }
+        }
+
+        function removeStars(count) {
+            for (let i = 0; i < count && stars.length > 0; i++) {
+                stars.pop();
+            }
+        }
+
+        function drawStars() {
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            stars.forEach(star => {
+                const x = (star.x / star.z) * canvas.width + canvas.width / 2;
+                const y = (star.y / star.z) * canvas.height + canvas.height / 2;
+                const p_x = (star.x / star.pz) * canvas.width + canvas.width / 2;
+                const p_y = (star.y / star.pz) * canvas.height + canvas.height / 2;
+
+                const size = (1 - star.z / (canvas.width * depthScale)) * 4;
+                const brightness = Math.floor((1 - star.z / (canvas.width * depthScale)) * 255);
+                const color = `rgb(${brightness}, ${brightness}, ${brightness})`;
+
+                ctx.strokeStyle = color;
+                ctx.lineWidth = size;
+                ctx.beginPath();
+                ctx.moveTo(p_x, p_y);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+            });
+        }
+
+        function animate() {
+            updateStars();
+            drawStars();
+            requestAnimationFrame(animate);
+        }
+
+        function updateStars() {
+            stars.forEach(star => {
+                star.pz = star.z;
+                star.z -= speed;
+
+                if (star.z <= 1) {
+                    star.x = (Math.random() - 0.5) * canvas.width * 4;
+                    star.y = (Math.random() - 0.5) * canvas.height * 4;
+                    star.z = Math.random() * canvas.width * depthScale * 0.2 + canvas.width * depthScale * 0.8;
+                    star.pz = star.z;
+                }
+            });
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown') {
+                if (speed > 4) {
+                    speed -= 0.5;
+                }
+            }
+            if (e.key === 'ArrowUp') {
+                if (speed < 50) {
+                    speed += 0.5;
+                }
+            }
+        });
+
+        resizeCanvas();
+        animate();
+    </script>
 </body>
-
 </html>
