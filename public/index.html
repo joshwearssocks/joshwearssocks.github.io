@@ -46,7 +46,7 @@
                         0 0 5px rgba(0, 255, 255, 0.5);
         }
 
-        .portfolio-link::before {
+       .portfolio-link::before {
             content: '';
             position: absolute;
             inset: -5px;
@@ -60,7 +60,6 @@
             );
             z-index: 0;
             opacity: 0;
-            transition: opacity 0.3s ease;
         }
 
         @keyframes rotate-border {
@@ -76,12 +75,6 @@
 
         .portfolio-link:hover {
             transform: scale(1.05);
-        }
-
-        @keyframes rotate-border {
-            100% {
-                transform: rotate(360deg);
-            }
         }
 
         .portfolio-link img {
